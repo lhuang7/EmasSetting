@@ -1,0 +1,24 @@
+;;==================================================
+;;GHC haskell complete mode
+;;==================================================
+
+;;sets up the auto-completes for haskell mode
+
+(add-to-list 'load-path "~/.emacs.d/el-get/ghc-mod")
+(autoload 'ghc-init "ghc" nil t)
+(add-hook 'haskell-mode-hook (lambda () (ghc-init)))
+
+;; Customization:
+
+;; An example to specify GHC options:
+
+;;     (setq ghc-ghc-options '("-idir1" "-idir2"))
+
+;; An example to specify HLint options:
+
+;;     (setq ghc-hlint-options '("--ignore=Use camelCase"))
+
+
+;; For more information, see:
+;; 	http://www.mew.org/~kazu/proj/ghc-mod/
+
